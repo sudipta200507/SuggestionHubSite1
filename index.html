@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Class Notes Hub</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 font-sans">
+
+  <!-- Header -->
+  <header class="bg-indigo-600 text-white shadow-lg">
+    <div class="max-w-6xl mx-auto p-6 text-center">
+      <h1 class="text-3xl font-bold">📘 Class Notes Hub</h1>
+      <p class="mt-2 text-gray-200">Download your exam notes by subject</p>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="max-w-6xl mx-auto p-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
+    
+    <!-- Subject Card Template -->
+    <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+      <h2 class="text-xl font-semibold text-indigo-700">Python</h2>
+      <p class="text-gray-500 mt-2">Programming Notes</p>
+      <button 
+        onclick="downloadNotes('python')" 
+        class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        📥 Download Notes
+      </button>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+      <h2 class="text-xl font-semibold text-indigo-700">DBMS</h2>
+      <p class="text-gray-500 mt-2">Database Notes</p>
+      <button 
+        onclick="downloadNotes('dbms')" 
+        class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        📥 Download Notes
+      </button>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+      <h2 class="text-xl font-semibold text-indigo-700">COA</h2>
+      <p class="text-gray-500 mt-2">Computer Organization Notes</p>
+      <button 
+        onclick="downloadNotes('coa')" 
+        class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        📥 Download Notes
+      </button>
+    </div>
+
+    <div class="bg-white shadow-lg rounded-2xl p-6 flex flex-col items-center">
+      <h2 class="text-xl font-semibold text-indigo-700">Discrete Math</h2>
+      <p class="text-gray-500 mt-2">Mathematics Notes</p>
+      <button 
+        onclick="downloadNotes('math')" 
+        class="mt-4 px-4 py-2 bg-indigo-600 text-white rounded-lg hover:bg-indigo-700 transition">
+        📥 Download Notes
+      </button>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-indigo-600 text-white text-center p-4 mt-10">
+    <p>© 2025 Class Notes Hub | Made for Students</p>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    // Add links to uploaded notes here
+    const notesLinks = {
+      python: "notes/python.pdf",   // Example: replace with your file path
+      dbms: "",                     // empty means not uploaded yet
+      coa: "",                      // not uploaded yet
+      math: ""                      // not uploaded yet
+    };
+
+    function downloadNotes(subject) {
+      if (notesLinks[subject]) {
+        window.location.href = notesLinks[subject]; // download the file
+      } else {
+        alert("📌 Suggestion is Coming Soon!");
+      }
+    }
+  </script>
+
+</body>
+</html>
